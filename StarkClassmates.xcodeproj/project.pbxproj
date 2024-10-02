@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		285028542CAD7C0F00A77CA4 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285028532CAD7C0F00A77CA4 /* AddViewController.swift */; };
+		285028562CAD7C1D00A77CA4 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285028552CAD7C1D00A77CA4 /* EditViewController.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		28EDE97B2CAC22550017FA0B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		285028532CAD7C0F00A77CA4 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		285028552CAD7C1D00A77CA4 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		28EDE9612CAC22530017FA0B /* StarkClassmates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarkClassmates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EDE97A2CAC22550017FA0B /* StarkClassmatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarkClassmatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EDE9842CAC22550017FA0B /* StarkClassmatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarkClassmatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +95,8 @@
 		28EDE9582CAC22530017FA0B = {
 			isa = PBXGroup;
 			children = (
+				285028552CAD7C1D00A77CA4 /* EditViewController.swift */,
+				285028532CAD7C0F00A77CA4 /* AddViewController.swift */,
 				28EDE9632CAC22530017FA0B /* StarkClassmates */,
 				28EDE97D2CAC22550017FA0B /* StarkClassmatesTests */,
 				28EDE9872CAC22550017FA0B /* StarkClassmatesUITests */,
@@ -249,6 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				285028562CAD7C1D00A77CA4 /* EditViewController.swift in Sources */,
+				285028542CAD7C0F00A77CA4 /* AddViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
