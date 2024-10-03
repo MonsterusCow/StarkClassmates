@@ -6,7 +6,7 @@
 //
 class thing{
     static var students = [ClassMate]()
-
+    static var number = 0
 }
 
 import UIKit
@@ -29,6 +29,17 @@ class ViewController: UIViewController {
         labelbutton.layer.cornerRadius = 10
         labelbutton.layer.masksToBounds = true
         
+    }
+    
+    @IBAction func goButton(_ sender: UIButton) {
+        press(label: labelbutton)
+    }
+    
+    func press(label: UILabel){
+        label.textColor = UIColor.gray
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { timer in
+            label.textColor = UIColor.black
+            }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

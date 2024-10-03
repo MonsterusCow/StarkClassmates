@@ -12,12 +12,12 @@ class ClassMateViewController: UIViewController {
     @IBOutlet weak var nameLavel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var textThing: UILabel!
-    var number = 0
     @IBOutlet weak var nextLabel: UILabel!
     @IBOutlet weak var prevLabel: UILabel!
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var editLable: UILabel!
     @IBOutlet weak var sortLabel: UILabel!
+    @IBOutlet weak var labelButton: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,8 @@ class ClassMateViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        labelButton.layer.cornerRadius = 10
+        labelButton.layer.masksToBounds = true
         nextLabel.layer.cornerRadius = 10
         nextLabel.layer.masksToBounds = true
         prevLabel.layer.cornerRadius = 10
@@ -37,27 +39,51 @@ class ClassMateViewController: UIViewController {
         sortLabel.layer.cornerRadius = 10
         sortLabel.layer.masksToBounds = true
         
-        nameLavel.text = "\(thing.students[number].Name) Aka \(thing.students[number].Nick)"
-        textThing.text = "This dude is \(thing.students[number].Age) years old, their favorite color is \(thing.students[number].FavoriteColor), and their grade is \(thing.students[number].Grade)"
+        nameLavel.text = "\(thing.students[thing.number].Name) Aka \(thing.students[thing.number].Nick)"
+        textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
     }
     
+    @IBAction func homeButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     @IBAction func nextBytton(_ sender: UIButton) {
-        if number != thing.students.count-1{
-            number += 1
+        if thing.number != thing.students.count-1{
+            thing.number += 1
         } else {
-            number = 0
+            thing.number = 0
         }
-        nameLavel.text = "\(thing.students[number].Name) Aka \(thing.students[number].Nick)"
-        textThing.text = "This dude is \(thing.students[number].Age) years old, their favorite color is \(thing.students[number].FavoriteColor), and their grade is \(thing.students[number].Grade)"
+        nameLavel.text = "\(thing.students[thing.number].Name) Aka \(thing.students[thing.number].Nick)"
+        textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+        press(label: nextLabel)
     }
     @IBAction func prevButton(_ sender: UIButton) {
-        if number > 0{
-            number -= 1
+        if thing.number > 0{
+            thing.number -= 1
         } else {
-            number = thing.students.count-1
+            thing.number = thing.students.count-1
         }
-        nameLavel.text = "\(thing.students[number].Name) Aka \(thing.students[number].Nick)"
-        textThing.text = "This dude is \(thing.students[number].Age) years old, their favorite color is \(thing.students[number].FavoriteColor), and their grade is \(thing.students[number].Grade)"
+        nameLavel.text = "\(thing.students[thing.number].Name) Aka \(thing.students[thing.number].Nick)"
+        textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+        press(label: prevLabel)
+    }
+    @IBAction func addButton(_ sender: UIButton) {
+        press(label: addLabel)
+    }
+    @IBAction func editButton(_ sender: UIButton) {
+        press(label: editLable)
+    }
+    @IBAction func sortButton(_ sender: UIButton) {
+        press(label: sortLabel)
+    }
+    
+    
+    func press(label: UILabel){
+        label.textColor = UIColor.gray
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { timer in
+            label.textColor = UIColor.black
+            }
     }
     
 
