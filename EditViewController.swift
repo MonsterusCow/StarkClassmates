@@ -19,6 +19,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var gradeField: UITextField!
     @IBOutlet weak var labelButton: UILabel!
     @IBOutlet weak var finishButton: UILabel!
+    @IBOutlet weak var genderSwitch: UISegmentedControl!
     
     
     
@@ -42,6 +43,11 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         colorField.delegate = self
         ageField.delegate = self
         gradeField.delegate = self
+        if thing.students[thing.number].Gender == gender.boy {
+            genderSwitch.selectedSegmentIndex = 0
+        } else {
+            genderSwitch.selectedSegmentIndex = 1
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -132,6 +138,13 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             thing.students[thing.number].FavoriteColor = colorField.text!
             thing.students[thing.number].Age = Int(ageField.text!)!
             thing.students[thing.number].Grade = Double(gradeField.text!)!
+            var TestGender = gender.boy
+            if genderSwitch.selectedSegmentIndex == 0{
+                TestGender = gender.boy
+            } else {
+                TestGender = gender.girl
+            }
+            thing.students[thing.number].Gender = TestGender
             self.navigationController?.popViewController(animated: true)
         }
     }

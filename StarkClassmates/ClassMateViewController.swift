@@ -38,9 +38,14 @@ class ClassMateViewController: UIViewController {
         editLable.layer.masksToBounds = true
         sortLabel.layer.cornerRadius = 10
         sortLabel.layer.masksToBounds = true
-        
         nameLavel.text = "\(thing.students[thing.number].Name) Aka \(thing.students[thing.number].Nick)"
-        textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+        if thing.students[thing.number].Gender == gender.boy{
+            textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+            image.image = UIImage(named: "boy")
+        } else {
+            textThing.text = "This dudette is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+            image.image = UIImage(named: "girl")
+        }
     }
     
     @IBAction func homeButton(_ sender: UIButton) {
@@ -55,7 +60,13 @@ class ClassMateViewController: UIViewController {
             thing.number = 0
         }
         nameLavel.text = "\(thing.students[thing.number].Name) Aka \(thing.students[thing.number].Nick)"
-        textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+        if thing.students[thing.number].Gender == gender.boy{
+            textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+            image.image = UIImage(named: "boy")
+        } else {
+            textThing.text = "This dudette is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+            image.image = UIImage(named: "girl")
+        }
         press(label: nextLabel)
     }
     @IBAction func prevButton(_ sender: UIButton) {
@@ -65,7 +76,13 @@ class ClassMateViewController: UIViewController {
             thing.number = thing.students.count-1
         }
         nameLavel.text = "\(thing.students[thing.number].Name) Aka \(thing.students[thing.number].Nick)"
-        textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+        if thing.students[thing.number].Gender == gender.boy{
+            textThing.text = "This dude is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+            image.image = UIImage(named: "boy")
+        } else {
+            textThing.text = "This dudette is \(thing.students[thing.number].Age) years old, their favorite color is \(thing.students[thing.number].FavoriteColor), and their grade is \(thing.students[thing.number].Grade)"
+            image.image = UIImage(named: "girl")
+        }
         press(label: prevLabel)
     }
     @IBAction func addButton(_ sender: UIButton) {

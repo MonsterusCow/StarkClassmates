@@ -19,6 +19,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var gradeField: UITextField!
     @IBOutlet weak var labelButton: UILabel!
     @IBOutlet weak var finishButton: UILabel!
+    @IBOutlet weak var genderSwitch: UISegmentedControl!
     
     
     
@@ -122,7 +123,13 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             }
         }
         if go {
-            thing.students.append(ClassMate(Name: nameField.text!, Nick: nickField.text!, Age: Int(ageField.text!)!, FavoriteColor: colorField.text!, Grade: Double(gradeField.text!)!))
+            var TestGender = gender.boy
+            if genderSwitch.selectedSegmentIndex == 0{
+                TestGender = gender.boy
+            } else {
+                TestGender = gender.girl
+            }
+            thing.students.append(ClassMate(Name: nameField.text!, Nick: nickField.text!, Age: Int(ageField.text!)!, FavoriteColor: colorField.text!, Grade: Double(gradeField.text!)!, Gender: TestGender))
             self.navigationController?.popViewController(animated: true)
         }
     }
