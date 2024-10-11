@@ -14,6 +14,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var labelbutton: UILabel!
+    @IBOutlet weak var lotsOfGuys: UILabel!
     
     var mattew = ClassMate(Name: "Mattew", Nick: "Glitch Fitch", Age: 16, FavoriteColor: "purble", Grade: 23.0, Gender: gender.boy)
     var peter = ClassMate(Name: "Peter", Nick: "Peter Kickle", Age: 12, FavoriteColor: "blue", Grade: 3.5, Gender: gender.boy)
@@ -51,6 +52,9 @@ class ViewController: UIViewController {
         thing.students.append(john)
         labelbutton.layer.cornerRadius = 10
         labelbutton.layer.masksToBounds = true
+        lotsOfGuys.layer.cornerRadius = 10
+        lotsOfGuys.layer.masksToBounds = true
+
         
     }
     
@@ -66,7 +70,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var nvc = segue.destination as! ClassMateViewController
+        var nvc = segue.destination as? ClassMateViewController
     }
 
 
